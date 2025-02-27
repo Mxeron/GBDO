@@ -90,7 +90,7 @@ def GBLOF(gb_list, point_to_gb, center_dist, gb_radius, fuzzy_similarity, k):
             s += reach_similarity[i, j_p]
         lrd[i] = s / k_fuzzy_card[i]
 
-    LOF = np.zeros(n)
+    OF = np.zeros(n)
     for i in range(n):
         t = 0
         i_gb = point_to_gb[i]
@@ -98,10 +98,15 @@ def GBLOF(gb_list, point_to_gb, center_dist, gb_radius, fuzzy_similarity, k):
         for j in range(cnt):
             j_gb = fuzzy_idxs[i_gb, j]
             t += lrd[j_gb] / lrd[i_gb]
-        LOF[i] = t / k_fuzzy_card[i_gb]
+        OF[i] = t / k_fuzzy_card[i_gb]
 
-    return LOF
+    return OF
 
 if __name__ == '__main__':
-    load_data = loadmat('./german_1_14_variant1.mat')
-    trandata = load_data['trandata']
+    df = pd.read_csv("./Datasets/cardio.csv")
+    cur_data = df.values
+
+    X = cur_data[:, :-1]
+    label = cur_data[:, -1]
+    gb_list, point_to_gb, center_dist, gb_radius, fuzzy_similarity = GB_Generate(X)
+    OF = GBLOF(gb_list, point_to_gb, center_dist, gb_radius, fuzzy_similarity, 15)
