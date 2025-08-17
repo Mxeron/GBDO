@@ -317,25 +317,3 @@ def load_txt_dataset(path):
         lines = file.readlines()
     data = np.array([[float(num) for num in line.split()] for line in lines])
     return data
-
-
-import pandas as pd
-import scipy.io as scio
-
-def main():
-    trandata = scio.loadmat("./breast_cancer_variant1.mat")['trandata']
-    trandata = trandata.astype(float)
-    # 标准化原始数据中的标称属性
-    ID = (trandata >= 1).all(axis=0) & (
-        trandata.max(axis=0) != trandata.min(axis=0))
-    scaler = MinMaxScaler()
-    if any(ID):
-        trandata[:, ID] = scaler.fit_transform(trandata[:, ID])
-    X = trandata[:, 0:-1]
-    labels = trandata[:, -1]
-    gb = GB_Gen(X)
-    print(len(gb))
-
-if __name__ == '__main__':
-    main()  
-
