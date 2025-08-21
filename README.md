@@ -7,6 +7,10 @@ Existing density-based outlier detection methods process data at the single-gran
 
 > More details on granular-ball generation can be found in **Xia, S., Shi, B., Wang, Y., Xie, J., Wang, G., & Gao, X. (2025). GBCT: efficient and adaptive clustering via granular-ball computing for complex data. IEEE Transactions on Neural Networks and Learning Systems.**
 
+## Framework
+![image](./Paper/GBDO_Framework.png)
+
+
 ## Usage
 You can run GBDO.py:
 ```python
@@ -43,3 +47,4 @@ If you find GBDO useful in your research, please consider citing:
 ```
 ## Contact
 If you have any questions, please contact suxinyu@stu.scu.edu.cn or yuanzhong@scu.edu.cn.
+
