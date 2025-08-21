@@ -1,6 +1,6 @@
 # GBDO
 
-Xinyu Su, Xiwen Wang, Dezhong Peng, Xiaomin Song, Huiming Zheng, and **Zhong Yuan**, [Identifying Outliers via Local Granular-Ball Density](https://ieeexplore.ieee.org/abstract/document/11073180), IEEE Transactions on Neural Networks and Learning Systems, 2025.
+Xinyu Su, Xiwen Wang, Dezhong Peng, Xiaomin Song, Huiming Zheng, and **Zhong Yuan***, [Identifying Outliers via Local Granular-Ball Density](https://ieeexplore.ieee.org/abstract/document/11073180), IEEE Transactions on Neural Networks and Learning Systems, 2025.
 
 ## Abstract
 Existing density-based outlier detection methods process data at the single-granularity level of individual samples, requiring pairwise distance calculations between all samples and exhibiting high sensitivity to noise. The single-granularity-based processing paradigm fails to mine the information at multiple levels of granularity in data, and most of these methods ignore the potential uncertainty information in data, such as fuzziness, resulting in an inability to effectively detect potential outliers in data. As a novel granular computing method, Granular-Ball Computing (GBC) is characterized by its multi-granularity and robustness, which makes it able to make up for the above drawbacks well. In this study, we propose local GranularBall Density-based Outlier (GBDO) detection to improve the performance of the density-based methods. In GBDO, we first identify the $k$-similarity Granular-Ball (GB) neighborhoods of each GB via the fuzzy relations among them. Subsequently, the local reachability similarity density of the GBs is calculated through the reachability similarity we defined. Finally, the local GB outlier factors of the samples are calculated based on the local reachability similarity density of the GBs. We adopt a multi-granularity processing paradigm using GBs as the basic units, which reduces computational complexity and improves robustness to noisy data by leveraging the multigranularity nature of GBs. The experimental results demonstrate the effectiveness of GBDO by comparing it with state-of-the-art methods. The source code and datasets are publicly available at https://github.com/Mxeron/GBDO.
@@ -47,4 +47,5 @@ If you find GBDO useful in your research, please consider citing:
 ```
 ## Contact
 If you have any questions, please contact suxinyu@stu.scu.edu.cn or yuanzhong@scu.edu.cn.
+
 
